@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title><%= render_content.title%></title>
+	<link rel="stylesheet" href="/output/dist/css/index.css">
+</head>
+<body id="index">
+	<div id="app"></div>
+
+	<script type="text/javascript">
+		const render_content = '<%= JSON.stringify(render_content)%>'
+	</script>
+	<script src="/output/dist/js/vendor.js"></script>
+	<script src="/output/dist/js/index.js"></script>
+</body>
+</html>

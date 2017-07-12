@@ -1,0 +1,86 @@
+#dropBox{
+    display:inline-block;
+    .avatar_hidden{
+		display: none;
+	}
+    .tips{
+        display: none;
+        text-align: center;
+        line-height: 100%;
+    }
+    .avatar{
+        position: relative;
+        cursor: pointer;
+        border-radius: 10px;
+        border: solid #fff 1px;
+        overflow: hidden;
+    }
+    .avatar:hover .tips{
+        display: inline-block;
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(119, 119, 119, 0.75);
+        h1{
+            position: absolute;
+            top: 44%;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+        }
+    }
+	.avatar_show{
+    	position: fixed;
+        width: 100%;
+        height: 100%;
+    	top: 0%;
+    	left: 0%;
+		display: inline-block;
+    	z-index: 100;
+    	background-color:rgba(0, 0, 0, 0.75);
+        .cropBox{
+            margin-top:10%;
+            margin-left:20%;
+            border-radius: 25px;
+            position: relative;
+            width: 50%;
+            padding: 1%;
+            background-color:#fff;
+            .ReactCrop{
+                width: 75%;
+                max-height: 300px;
+                max-width: 480px;
+            }
+            .right{
+                display: inline-block;
+                vertical-align: top;
+                .review{
+                    width: 100px;
+                    height: 100px;
+                    display: inline-block;
+                    vertical-align: top;
+                    margin: 10px;
+                    position:relative;
+                }
+                button.selectPicture{
+                    bottom: 60px;
+                }
+                button{
+                    position: absolute;
+                    bottom: 20px;
+                    right: 25px;
+                }
+                button.close{
+                    font-size: 16px;
+                    color: #fff;
+                    background-color: rgba(255, 0, 0, 1);
+                    border-color: rgba(255, 0, 0, 1);
+                    right: -10px;
+                    top: 0px;
+                }
+            }
+        }
+	}
+}
