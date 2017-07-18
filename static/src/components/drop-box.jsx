@@ -104,9 +104,12 @@ class DropBox extends React.Component {
 
 		if(result.success){
 			message.success('上传头像成功')
-			this.setState({
-				avatarPath: result.data.path
-			})
+			// this.setState({
+			// 	avatarPath: result.data.path
+			// })
+			if(typeof this.props.cb == 'function'){
+				this.props.cb(result.data.path)
+			}
 			this.avatarHiddenButtonHandle()
 		}else{
 			message.error('上传头像失败')

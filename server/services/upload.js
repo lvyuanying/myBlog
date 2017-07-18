@@ -1,5 +1,7 @@
 const { uploadFile } = require('./../utils/upload')
 const userServer = require('./user-info')
+const getIPAdress = require('./../utils/getIPAdress')
+const port = require('./../../config').port
 
 /**
  * uploadAvatar
@@ -16,10 +18,10 @@ const uploadAvatar = async (ctx)=>{
 			id: ctx.session.userId, 
 			avatar_path: uploadResult.staticPath
 		})
-		console.log(results)
+		let ip = getIPAdress()
 
 		return {
-			path: uploadResult.staticPath,
+			path: `http://${ip}:${port}/${uploadResult.staticPath}`,
 			type: uploadResult.fileType,
 			name: uploadResult.fileName
 		}

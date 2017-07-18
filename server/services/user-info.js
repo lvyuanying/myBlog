@@ -3,8 +3,11 @@
  */
 
 const validator = require('validator')
+const os = require('os')
 const userModel = require('./../modules/user-info')
 const userCode  = require('./../codes/user')
+const getIPAdress = require('./../utils/getIPAdress')
+const port = require('./../../config').port
 
 const user = {
 
@@ -33,6 +36,8 @@ const user = {
 
 		let resultData = await userModel.getUserInfoByUserName(userName) || {}
 		let {id,...userInfo} = resultData
+		let ipAdress = getIPAdress()
+		userInfo.avatar_path = `http://${ipAdress}:${port}/${userInfo.avatar_path}`
 		// let userInfo = {
 		// 	email: resultData.eamil,
 		// 	userName : resultData.name,
