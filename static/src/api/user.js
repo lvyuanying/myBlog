@@ -39,7 +39,7 @@ const uploadUserAvatar = async(obj) =>{
 	return result
 }
 
-const getUserInfo = async(obj) =>{
+const getUserInfo = async() =>{
 	let result = await Request.get({
 		url: '/api/user/getUserInfo'
 	})

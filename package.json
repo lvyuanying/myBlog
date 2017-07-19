@@ -36,9 +36,12 @@
     "react-dom": "^15.5.4",
     "react-image-crop": "^2.0.5",
     "react-keeper": "^2.0.6",
+    "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
     "react-router-config": "^1.0.0-beta.3",
     "react-router-dom": "^4.1.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
     "validator": "^7.0.0",
     "whatwg-fetch": "^2.0.3"
   },
