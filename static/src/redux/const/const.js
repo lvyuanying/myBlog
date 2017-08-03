@@ -1,4 +1,0 @@
-export const SAVA_USERLIST = 'REQUEST_USERINOF'
-export const SAVA_USERINOF = 'REQUEST_USERLIST'
-export const TABLE_STATE = 'TABLE_STATE'
-export const EDIT_LIST_USER = 'EDIT_LIST_USER'

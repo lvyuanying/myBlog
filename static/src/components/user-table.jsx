@@ -1,11 +1,18 @@
 import React from 'react'
 import { Layout, Table, Icon, Button, Select, message } from 'antd'
+// import template from './common/template.jsx'
+import * as action from './../redux/action'
+import { connect } from 'react-redux'
 import { getUserList, delUser, setUserIdentified } from './../api/user'
 
 const { Content } = Layout
 const { Option } = Select
 
 class UserTable extends React.Component {
+
+	constructor(props ){
+		
+	}
 
 	state = {
 		data: [],
@@ -84,13 +91,14 @@ class UserTable extends React.Component {
 
 		this.setState({
 			pagination: pager,
-		});
+		})
+		// console.log(filters)
 		this.fetch({
 			results: pagination.pageSize,
 			page: pagination.current,
-			sortField: sorter.field,
-			sortOrder: sorter.order,
-			...filters,
+			// sortField: sorter.field,
+			// sortOrder: sorter.order,
+			// ...filters
 		})
 	}
 
@@ -110,6 +118,9 @@ class UserTable extends React.Component {
 
 	componentDidMount() {
 		this.fetch()
+		const { dispatch, UserInfo, UserList } = this.props
+
+		dispatch(action.getUserInfo())
 	}
 
 	render(){
@@ -129,4 +140,10 @@ class UserTable extends React.Component {
 	}
 }
 
-export default UserTable
+export default connect(state => {
+	let { UserInfo, UserList } = state
+	return {
+		UserInfo,
+		UserList
+	}
+})(UserTable)
